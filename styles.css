@@ -1,0 +1,189 @@
+/* =========================================
+   RESET GLOBAL - Remove estilos padrão
+========================================= */
+* {
+    margin: 0;                 /* Remove todas as margens externas */
+    padding: 0;                /* Remove todos os espaçamentos internos */
+    box-sizing: border-box;    /* Padding e borda fazem parte da largura total */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte padrão de toda a página */
+}
+
+/* =========================================
+   BODY - Estilização do corpo da página
+========================================= */
+body {
+    background-image: url("img/juender.jpeg"); /* Imagem de fundo */
+    background-size: cover;                    /* Cobre toda a tela */
+    background-position: center;               /* Centraliza a imagem */
+    height: 100vh;                             /* Altura igual à tela inteira */
+    display: flex;                             /* Ativa Flexbox */
+    align-items: center;                       /* Centraliza verticalmente */
+    justify-content: center;                   /* Centraliza horizontalmente */
+}
+
+/* =========================================
+   CAIXA PRINCIPAL DO TRADUTOR
+========================================= */
+.caixa-maior {
+    background-color: #000000f2; /* Preto com 95% de opacidade (f2 em hexadecimal) */
+    width: 450px;                /* Largura fixa */
+    border-radius: 25px;         /* Cantos arredondados */
+    padding: 20px;               /* Espaço interno */
+}
+
+/* =========================================
+   CAMPO DE TEXTO DE ENTRADA
+========================================= */
+.input-texto {
+    width: 100%;                 /* Ocupa toda a largura disponível */
+    height: 100px;               /* Altura fixa */
+    border: none;                /* Remove borda padrão */
+    outline: none;               /* Remove linha azul ao clicar (focus) */
+    background-color: #ffffff1a; /* Branco com 10% de opacidade */
+    border-radius: 15px;         /* Cantos arredondados */
+    color: #ffffff;              /* Texto branco */
+    font-size: 16px;             /* Tamanho da fonte */
+    padding: 15px;               /* Espaço interno do texto */
+    resize: none;                /* Usuário não pode redimensionar */
+}
+
+/* Texto dica (placeholder) dentro do campo */
+.input-texto::placeholder {
+    color: #ffffff66;            /* Branco com 40% de opacidade */
+}
+
+/* =========================================
+   ÁREA DE CONTROLES (select + botões)
+========================================= */
+.controle {
+    display: flex;               /* Coloca elementos em linha */
+    align-items: center;         /* Centraliza verticalmente */
+    justify-content: center;     /* Centraliza horizontalmente */
+    gap: 10px;                   /* Espaço de 10px entre os elementos */
+    margin: 20px 0;              /* 20px em cima e embaixo, 0 nas laterais */
+}
+
+/* =========================================
+   MENU SUSPENSO DE IDIOMAS
+========================================= */
+.idioma {
+    flex: 1;                     /* Ocupa todo espaço disponível restante */
+    border: none;                /* Remove borda */
+    border-radius: 20px;         /* Cantos arredondados */
+    outline: none;               /* Remove linha de focus */
+    padding: 10px;               /* Espaço interno */
+    background-color: #ffffff1a; /* Branco com 10% de opacidade */
+    color: #ffffff;              /* Texto branco */
+    cursor: pointer;             /* Cursor vira "mãozinha" */
+}
+
+/* Opções dentro do menu suspenso */
+option {
+    background-color: #000000;   /* Fundo preto */
+    color: #ffffff;              /* Texto branco */
+}
+
+/* =========================================
+   BOTÕES (Traduzir e Microfone)
+========================================= */
+.button {
+    border: none;                /* Remove borda */
+    background-color: #ffffff1a; /* Branco com 10% de opacidade */
+    border-radius: 50%;          /* Transforma em círculo perfeito */
+    cursor: pointer;             /* Cursor vira "mãozinha" */
+    width: 50px;                 /* Largura fixa */
+    height: 50px;                /* Altura fixa (mesmo que largura = círculo) */
+    display: flex;               /* Flexbox para centralizar imagem */
+    align-items: center;         /* Centraliza imagem verticalmente */
+    justify-content: center;     /* Centraliza imagem horizontalmente */
+    transition: all 0.3s ease;   /* Animação suave de 0.3 segundos */
+}
+
+/* Efeito quando clica no botão */
+.button:active {
+    transform: scale(0.95);      /* Diminui um pouco ao clicar */
+}
+
+/* =========================================
+   IMAGENS DENTRO DOS BOTÕES
+========================================= */
+.button img {
+    width: 35px;                 /* Largura da imagem */
+    height: 35px;                /* Altura da imagem */
+    border-radius: 50%;          /* Imagem redonda */
+    transition: filter 0.3s ease; /* Animação suave para mudança de cor */
+}
+
+/* =========================================
+   ÁREA DO RESULTADO DA TRADUÇÃO
+========================================= */
+.resultado {
+    padding: 15px;               /* Espaço interno */
+    background-color: #ffffff1a; /* Branco com 10% de opacidade */
+    border-radius: 15px;         /* Cantos arredondados */
+}
+
+/* Título "Tradução" acima do resultado */
+.titulo-traducao {
+    color: #ffffff;              /* Texto branco */
+    font-size: 16px;             /* Tamanho da fonte */
+    font-weight: bold;           /* Texto em negrito */
+    margin-bottom: 10px;         /* Espaço abaixo do título */
+}
+
+/* Campo onde aparece a tradução */
+.traducao {
+    color: #ffffff;              /* Texto branco */
+    font-size: 18px;             /* Fonte um pouco maior que a entrada */
+    border: none;                /* Remove borda */
+    outline: none;               /* Remove linha de focus */
+    background: transparent;     /* Fundo transparente */
+    resize: none;                /* Não pode redimensionar */
+    width: 100%;                 /* Ocupa toda largura */
+    min-height: 60px;            /* Altura mínima */
+}
+
+/* Texto dica (placeholder) da tradução */
+.traducao::placeholder {
+    color: #ffffff66;            /* Branco com 40% de opacidade */
+}
+
+/* =========================================
+   ANIMAÇÃO ESPECIAL PARA O MICROFONE ATIVO
+========================================= */
+@keyframes pulsar-microfone {
+    0% {
+        box-shadow: 0 0 5px #ff4444;   /* Sombra pequena */
+    }
+    50% {
+        box-shadow: 0 0 20px #ff4444;  /* Sombra grande (pico) */
+    }
+    100% {
+        box-shadow: 0 0 5px #ff4444;   /* Volta à sombra pequena */
+    }
+}
+
+/* Classe que será adicionada pelo JavaScript quando microfone ativo */
+.microfone-ativo {
+    background-color: #ff4444 !important;     /* Fundo vermelho */
+    animation: pulsar-microfone 1.5s infinite; /* Animação contínua */
+}
+
+/* =========================================
+   RESPONSIVO PARA CELULARES
+========================================= */
+@media (max-width: 500px) {
+    .caixa-maior {
+        width: 90%;              /* Ocupa 90% da tela em celulares */
+        margin: 20px;            /* Margem nas laterais */
+    }
+    
+    .controle {
+        flex-wrap: wrap;         /* Quebra linha se necessário */
+    }
+    
+    .idioma {
+        min-width: 100%;         /* Ocupa linha inteira em celular */
+        margin-bottom: 10px;     /* Espaço abaixo */
+    }
+}

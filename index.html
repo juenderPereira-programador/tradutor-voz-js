@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8"> <!-- Suporta acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivo para celular -->
+    <title>Tradutor de Idiomas com Microfone</title> <!-- Título na aba do navegador -->
+    
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- CONTAINER PRINCIPAL - Caixa preta que envolve tudo -->
+    <div class="caixa-maior">
+        
+        <!-- ÁREA PARA DIGITAR O TEXTO -->
+        <textarea 
+            class="input-texto" 
+            placeholder="Escreva o que quer traduzir ou use o microfone">
+        </textarea>
+        <!-- Textarea: campo onde usuário digita ou aparece texto do microfone -->
+        
+        <!-- ÁREA DE CONTROLES: botões e seleção de idioma -->
+        <div class="controle">
+            
+            <!-- MENU SUSPENSO DE IDIOMAS -->
+            <select class="idioma">
+                <!-- Cada option tem valor no formato "origem|destino" -->
+                <option value="pt|en">Português → Inglês</option>
+                <option value="en|pt">Inglês → Português</option>
+                <option value="pt|es">Português → Espanhol</option>
+                <option value="es|pt">Espanhol → Português</option>
+                <option value="en|es">Inglês → Espanhol</option>
+                <option value="es|en">Espanhol → Inglês</option>
+                <option value="en|de">Inglês → Alemão</option>
+                <option value="de|en">Alemão → Inglês</option>
+                <option value="en|fr">Inglês → Francês</option>
+                <option value="fr|en">Francês → Inglês</option>
+            </select>
+            <!-- Select: menu suspenso para escolher idiomas -->
+            
+            <!-- BOTÃO DE TRADUZIR -->
+            <button class="button" id="btnTraduzir">
+                <img src="img/traduzir.jpg" alt="Traduzir">
+            </button>
+            <!-- ID "btnTraduzir" é importante para o JavaScript encontrar este botão -->
+            
+            <!-- BOTÃO DO MICROFONE (NOVO) -->
+            <button class="button" id="btnMicrofone">
+                <img src="img/microfone.jpeg" alt="Microfone" id="iconeMicrofone">
+            </button>
+            <!-- 
+            Dois IDs importantes:
+            1. id="btnMicrofone" - para o botão inteiro
+            2. id="iconeMicrofone" - para a imagem dentro do botão
+            -->
+            
+        </div>
+        <!-- Fim da área de controles -->
+        
+        <!-- ÁREA DO RESULTADO (ONDE APARECE A TRADUÇÃO) -->
+        <div class="resultado">
+            <h3 class="titulo-traducao">Tradução</h3> <!-- Título "Tradução" -->
+            
+            <textarea 
+                class="traducao" 
+                placeholder="A tradução aparecerá aqui..." 
+                readonly>
+            </textarea>
+            <!-- readonly: usuário não pode editar, só ler o resultado -->
+        </div>
+        <!-- Fim da área de resultado -->
+        
+    </div>
+    <!-- Fim do container principal -->
+    
+    <!-- ARQUIVO JAVASCRIPT -->
+    <!-- Deve ser a última coisa antes de fechar o body -->
+    <script src="scripts.js"></script>
+</body>
+</html>
